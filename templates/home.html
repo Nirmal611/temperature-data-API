@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather data API</title>
+</head>
+<body>
+<h1>Weather Data API </h1>
+<p>URL FORMAT : http://127.0.0.1:5000/station/date </p>
+<p> URL EXAMPLE : http://127.0.0.1:5000/10/2024-5-11 </p>
+<p> EXAMPLE OUTPUT : {'station_id':10, 'station': 'STOCKHOLM', 'date': '2024-5-11', 'temperature': 2.3, 'year_mean': 7.98, 'month_mean': 3.56}</p>
+<p>(year_mean and month_mean gives the mean temperature value of the selected station in the respective year and month of the given date)</p>
+<h2>List Of Available Stations :</h2>
+<p>{{data | safe}}</p>
+</body>
+</html>
