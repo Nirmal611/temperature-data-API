@@ -6,10 +6,44 @@
 </head>
 <body>
 <h1>Weather Data API </h1>
-<p>URL FORMAT : http://127.0.0.1:5000/station/date </p>
-<p> URL EXAMPLE : http://127.0.0.1:5000/10/2024-5-11 </p>
+<h3>To get the average temperature of a day in a station </h3>
+<p>URL FORMAT : http://127.0.0.1:5000/station/date=date </p>
+<p> URL EXAMPLE : http://127.0.0.1:5000/10/date=2024-5-11 </p>
 <p> EXAMPLE OUTPUT : {'station_id':10, 'station': 'STOCKHOLM', 'date': '2024-5-11', 'temperature': 2.3, 'year_mean': 7.98, 'month_mean': 3.56}</p>
 <p>(year_mean and month_mean gives the mean temperature value of the selected station in the respective year and month of the given date)</p>
+<h3>To get the whole temperature data of a year in a station </h3>
+<p>URL FORMAT : http://127.0.0.1:5000/station/year=date </p>
+<p> URL EXAMPLE : http://127.0.0.1:5000/10/year=2000 </p>
+<p> EXAMPLE OUTPUT :
+   [
+  {
+    "DATE": "20000101",
+    "STAID": 10,
+    "TG": -2.3
+  },
+  {
+    "DATE": "20000102",
+    "STAID": 10,
+    "TG": 1.3
+  },.............................
+    ]
+</p>
+<p> (DATE format id - 'YYYYMMDD')</p>
+<h3>To get the average temperature of each day for a station </h3>
+<p>URL FORMAT : http://127.0.0.1:5000/station/ </p>
+<p> URL EXAMPLE : http://127.0.0.1:5000/10/ </p>
+<p> EXAMPLE OUTPUT : [
+  {
+    "DATE": 17560101,
+    "STAID": 10,
+    "TG": -8.7
+  },
+  {
+    "DATE": 17560102,
+    "STAID": 10,
+    "TG": -9.2
+  },........................]</p>
+<p> (DATE format is - 'YYYYMMDD')</p>
 <h2>List Of Available Stations :</h2>
 <p>{{data | safe}}</p>
 </body>
